@@ -7,7 +7,8 @@
     "depends": ['website'],
     "summary": "remove Powered by Odoo",
     "description": """
-remove "Powered by Odoo, an awesome Open Source CRM. " in footer of odoo website
+remove "Powered by Odoo, an awesome Open Source CRM. " 
+in footer of odoo website
 author : 'TH'\n
 """,
     "data": [
