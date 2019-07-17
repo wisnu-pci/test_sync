@@ -51,7 +51,7 @@ env:
 # - MAKEPOT="1"
 # add MAKEPOT="1" to a TEST line to export .pot files from
 # the test database after test success
-  - TESTS="1" ODOO_REPO="odoo/odoo" MAKEPOT="1"
+  - TESTS="1" ODOO_REPO="odoo/odoo"
   - TESTS="1" ODOO_REPO="OCA/OCB"
 # either use the two lines above or the two below. Don't change the default if
 # it's not necessary (it is only necessary if modules in your repository can't
