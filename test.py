@@ -2,7 +2,7 @@
 
 #this is news test file
 
-from datetime import date
+# from datetime import date
 
-a = date.today()
-print("a",a)
+a = 5*7
+print("a is ",a)
