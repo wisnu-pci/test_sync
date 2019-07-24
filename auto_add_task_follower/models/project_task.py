@@ -46,11 +46,11 @@ class ProjectTask(models.Model):
                 partner = self.env['res.partner'].search([
                     ('user_ids', '=', reviewer)], limit=1)
                 is_follower = self.env['mail.followers'].search([
-                    ('partner_id', '=', partner.id), 
-                    ('res_id', '=', this.id)])
+                    ('partner_id', '=', partner.id), ('res_id', '=', this.id)])
                 if not is_follower:
-                    follower_vals = {'res_model': 'project.task',
-                                     'res_id': this.id,
-                                     'partner_id': partner.id}
-                        self.env['mail.followers'].create(follower_vals)
+                    follower_vals = {
+                        'res_model': 'project.task',
+                        'res_id': this.id,
+                        'partner_id': partner.id}
+                    self.env['mail.followers'].create(follower_vals)
         return res
