@@ -29,7 +29,7 @@
 Author:\n
     Masoud Ananahad\n
 \n
-When a task have reviewer, this reviewer will add 
+When a task have reviewer, this reviewer will add
 to the followers automatically as well.\n
 \n
 v.1.0.1
