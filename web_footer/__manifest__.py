@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 {
     "name": "Web Footer",
     "version": "11.0.1.0.0",
