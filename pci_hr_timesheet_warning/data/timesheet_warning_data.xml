@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--<data noupdate="1"> -->
+    <!-- Timesheet Warning-related subtypes for messaging / Chatter -->
+    <record id="timesheet_warning_excused" model="mail.message.subtype">
+        <field name="name">Excused</field>
+        <field name="res_model">timesheet.warning</field>
+        <field name="default" eval="True"/>
+        <field name="description">Timesheet Warning Excused</field>
+    </record>
+    <record id="timesheet_warning_system_mistake" model="mail.message.subtype">
+        <field name="name">System Mistake</field>
+        <field name="res_model">timesheet.warning</field>
+        <field name="default" eval="True"/>
+        <field name="description">Timesheet Warning on System Mistake</field>
+    </record>
+    <!--</data>-->
+</odoo>

@@ -1,0 +1,41 @@
+<odoo>
+    <record id="report_timesheet_view_wizard" model="ir.ui.view">
+        <field name="name">report.timesheet.view.wizard</field>
+        <field name="model">report.timesheet.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Timesheet Report">
+                <sheet>
+                    <group>
+                        <field invisible="1" name="state_x"/>
+                        <group attrs="{'invisible':[('state_x','=','get')]}">
+                            <field name="start_date" required="1"/>
+                        </group>
+                        <group attrs="{'invisible':[('state_x','=','get')]}">
+                            <field name="end_date" required="1"/>
+                        </group>
+                        <separator colspan="4" string="Generate to Excel done. Download by click link below"
+                                   attrs="{'invisible':[('state_x','=','choose')]}"/>
+                        <field name="name" invisible="1" width="100" attrs="{'invisible':[('state_x','=','choose')]}"/>
+                        <field name="data_x" nolabel="1" readonly="0" width="100" filename="name"
+                               attrs="{'invisible':[('state_x','=','choose')], 'readonly':[('state_x','=','get')]}"/>
+                    </group>
+                </sheet>
+                <footer attrs="{'invisible':[('state_x','=','get')]}">
+                    <button name="report_timesheet_button" string="Print" type="object" colspan="2"
+                            class="oe_highlight"/>
+                    or
+                    <button special="cancel" string="Cancel" colspan="2"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="report_timesheet_action_wizard" model="ir.actions.act_window">
+        <field name="name">Timesheet Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.timesheet.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

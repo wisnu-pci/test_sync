@@ -1,0 +1,23 @@
+<odoo>
+    <record id="hr_holidays_status_check_timesheet_warning" model="ir.ui.view">
+        <field name="name">hr.holidays.status.timesheet.warning</field>
+        <field name="model">hr.holidays.status</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="check_timesheet_warning"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_holidays_status_check_timesheet_warning_tree" model="ir.ui.view">
+        <field name="name">hr.holidays.status.timesheet.warning.tree</field>
+        <field name="model">hr.holidays.status</field>
+        <field name="inherit_id" ref="hr_holidays.view_holiday_status_normal_tree"/>
+        <field name="arch" type="xml">
+            <field name="limit" position="before">
+                <field name="check_timesheet_warning"/>
+            </field>
+        </field>
+    </record>
+</odoo>

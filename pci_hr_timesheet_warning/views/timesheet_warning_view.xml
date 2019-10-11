@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="timesheet_warning_form" model="ir.ui.view">
+        <field name="name">timesheet.warning.form</field>
+        <field name="model">timesheet.warning</field>
+        <field name="arch" type="xml">
+            <form string="Timesheet Warning">
+                <header>
+                    <field name="state" widget="statusbar" clickable="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h2>
+                            <field name="name" class="oe_inline" placeholder="Employee's Name"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date"/>
+                            <field name="quarter_id"/>
+                            <field name="n_warning" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="timesheet_warning_tree" model="ir.ui.view">
+        <field name="name">timesheet.warning.tree</field>
+        <field name="model">timesheet.warning</field>
+        <field name="arch" type="xml">
+            <tree string="Timesheet Warning">
+                <field name="name"/>
+                <field name="quarter_id"/>
+                <field name="date" widget="date"/>
+                <field name="n_warning"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_open_timesheet_warning" model="ir.actions.act_window">
+        <field name="name">Timesheet Warning</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">timesheet.warning</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="timesheet_warning_tree"/>
+    </record>
+
+    <record id="timesheet_quarter_form" model="ir.ui.view">
+        <field name="name">timesheet.quarter.form</field>
+        <field name="model">timesheet.warning.quarter</field>
+        <field name="arch" type="xml">
+            <form string="Timesheet Quarter">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" class="oe_inline" placeholder="Quarter's Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="timesheet_quarter_tree" model="ir.ui.view">
+        <field name="name">timesheet.quarter.tree</field>
+        <field name="model">timesheet.warning.quarter</field>
+        <field name="arch" type="xml">
+            <tree string="Timesheet Quarter">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_open_timesheet_quarter" model="ir.actions.act_window">
+        <field name="name">Timesheet Quarter</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">timesheet.warning.quarter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="timesheet_quarter_tree"/>
+    </record>
+
+    <record id="view_timesheet_template_form" model="ir.ui.view">
+        <field name="name">view.timesheet.template.form</field>
+        <field name="model">timesheet.mail</field>
+        <field name="arch" type="xml">
+            <form string="Timesheet Mail Configuration">
+                <group>
+                    <field name="name"/>
+                    <field name="type" required="1"/>
+                    <field name="sequence" required="1"/>
+                    <field name="email_template"/>
+                </group>
+                <group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_timesheet_template_tree" model="ir.ui.view">
+        <field name="name">view.timesheet.template.tree</field>
+        <field name="model">timesheet.mail</field>
+        <field name="arch" type="xml">
+            <tree string="Timesheet Mail Configuration">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_open_timesheet_email_template" model="ir.actions.act_window">
+        <field name="name">Timesheet Email Template</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">timesheet.mail</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_timesheet_template_tree"/>
+    </record>
+
+    <menuitem id="menu_timesheet_warning" name="Timesheet Warning" parent="hr_timesheet.timesheet_menu_root"
+              sequence="99"
+              groups="pci_hr_timesheet_warning.pci_group_timesheet_warning"/>
+
+    <menuitem id="menu_child_warning" name="Warnings" action="action_open_timesheet_warning"
+              parent="menu_timesheet_warning" sequence="5"/>
+    <menuitem id="menu_child_quarter" name="Quarters" action="action_open_timesheet_quarter"
+              parent="menu_timesheet_warning" sequence="6"/>
+    <menuitem id="menu_child_email_template" name="Email Template" action="action_open_timesheet_email_template"
+              parent="menu_timesheet_warning" sequence="7"/>
+    <!--</data>-->
+</odoo>
