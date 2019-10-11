@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+hr_timesheet_warning_user,hr.timesheet.warning.user,model_timesheet_warning,pci_hr_timesheet_warning.pci_group_timesheet_warning,1,1,1,0
+hr_timesheet_mail_user,hr.timesheet.mail.user,model_timesheet_mail,pci_hr_timesheet_warning.pci_group_timesheet_warning,1,1,1,0
+hr_timesheet_quarter_user,hr.timesheet.quarter.user,model_timesheet_warning_quarter,pci_hr_timesheet_warning.pci_group_timesheet_warning,1,1,1,1
+hr_timesheet_warning_all,hr.timesheet.warning.all,model_timesheet_warning,,1,0,0,0

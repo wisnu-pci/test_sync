@@ -1,0 +1,35 @@
+<odoo>
+    <record id="template_reminder_message_friday" model="mail.template">
+        <field name="name">Template Timesheet Reminder Friday</field>
+        <field name="email_from"/>
+        <field name="subject"/>
+        <field name="email_cc"/>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="auto_delete" eval="False"/>
+        <field name="lang"/>
+        <field name="copyvalue"/>
+        <field name="body_html"><![CDATA[]]></field>
+    </record>
+
+    <record id="reminder_message_friday" model="timesheet.mail">
+        <field name="name">Timesheet Reminder Friday</field>
+        <field name="type">reminder</field>
+        <field name="sequence">0</field>
+        <field name="email_template">
+            <![CDATA[
+<p>Hi %s,</p> 
+<p>Thank you very much for your hard work.</p>
+<p>It's Friday 5pm and you haven't submitted your timesheet yet. Please do it and stop working now. It's YOUR week-end!</p>
+<br/>
+<p>Don't forget to relax and see you full of energy on Monday! </p>
+<br/>
+<p>Regards</p>
+<p><b>Portcities Management</b></p>
+<p><b>IT solutions for International Trade, Manufacturing and e-Commerce</b></p>
+<img src="https://ci6.googleusercontent.com/proxy/j8WvUkBeuki9PLXCzSOC6hpvFBPVlpLATCXuqic8W41juBBLLVx2TsQ6qyLsjG7uLX1SxHoEmglLybXj-bVsjEXCuPECHRmf14ikM8rFNsklbhnwrc-8f-_p29K5Ugg5bzlHqKCoROx-guzR2-jnYJOU9IrD3gbWXtx0Z-CUI9feuwbIHWP9LeZAWNfaTm9l2rQ3Y3NNvHncxwY=s0-d-e1-ft#https://docs.google.com/uc?export=download&amp;id=0B-MxaoXZkIwka19RdzVwX255Ylk&amp;revid=0B-MxaoXZkIwkUWFQZmFqNTM5SE5mZTl2aWJPNjRBTVdPdFRRPQ" width="200" height="70">
+<div><i>Your trusted partner in Asia</i></div>
+<a href="http://www.portcities.net/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.portcities.net/" style="color: rgb(17, 85, 204);">www.portcities.net</a>
+               ]]>
+        </field>
+    </record>
+</odoo>

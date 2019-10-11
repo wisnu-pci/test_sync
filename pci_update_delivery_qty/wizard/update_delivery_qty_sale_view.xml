@@ -1,0 +1,29 @@
+<odoo>
+    <record id="update_delivery_qty_sale_view" model="ir.ui.view">
+        <field name="name">update.delivery.qty.sale.view</field>
+        <field name="model">update.delivery.qty.sale</field>
+        <field name="arch" type="xml">
+            <form string="Update Delivered Quantity Sale">
+                <group>
+                    <!--<field name="date_from"/>-->
+                    <field name="date_to"/>
+                </group>
+                <footer>
+                    <button name="action_update_delivery_qty_sale" type="object" string="Update"
+                            class="oe_highlight"/>
+                    <button string="Cancel" type="object" name="cancel" class="oe_link"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="update_delivery_qty_sale_action_wizard" model="ir.actions.act_window">
+        <field name="name">Update Delivery Qty Sale</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">update.delivery.qty.sale</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_timesheet_warning" model="ir.cron">
+        <field name="name">Timesheet Warning</field>
+        <field name="model_id" ref="pci_hr_timesheet_warning.model_timesheet_warning"/>
+        <field name="state">code</field>
+        <field name="code">model.check_timesheet_warning()</field>
+        <field name="priority">1</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+    </record>
+    <record id="ir_cron_timesheet_reminder" model="ir.cron">
+        <field name="name">Timesheet Reminder</field>
+        <field name="model_id" ref="pci_hr_timesheet_warning.model_timesheet_warning"/>
+        <field name="state">code</field>
+        <field name="code">model.check_timesheet_reminder()</field>
+        <field name="priority">1</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+    </record>
+    <record id="ir_cron_timesheet_reminder_yesterday" model="ir.cron">
+        <field name="name">Timesheet Reminder (Prev Day)</field>
+        <field name="model_id" ref="pci_hr_timesheet_warning.model_timesheet_warning"/>
+        <field name="state">code</field>
+        <field name="code">model.check_timesheet_reminder()</field>
+        <field name="priority">1</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+    </record>
+    <record id="ir_cron_timesheet_reminder_friday" model="ir.cron">
+        <field name="name">Timesheet Reminder (Friday)</field>
+        <field name="model_id" ref="pci_hr_timesheet_warning.model_timesheet_warning"/>
+        <field name="state">code</field>
+        <field name="code">model.check_timesheet_reminder_for_friday()</field>
+        <field name="priority">1</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+    </record>
+</odoo>

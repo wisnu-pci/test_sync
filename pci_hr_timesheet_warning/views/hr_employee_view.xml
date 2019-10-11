@@ -1,0 +1,18 @@
+<odoo>
+    <record id="hr_employee_timesheet_record" model="ir.ui.view">
+        <field name="name">hr.employee.timesheet.record</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <page name="hr_settings" position="after">
+                    <page string="Timesheet Warning">
+                        <group>
+                            <field name="timesheet_exception"/>
+                        </group>
+                    </page>
+                </page>
+            </data>
+        </field>
+    </record>
+</odoo>

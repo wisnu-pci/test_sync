@@ -1,0 +1,25 @@
+<odoo noupdate="1">
+    <record id="timesheet_first_quarter_2018" model="timesheet.warning.quarter">
+        <field name="name">First Quarter 2018</field>
+        <field name="start_date">2018-01-01</field>
+        <field name="end_date">2018-03-31</field>
+    </record>
+
+    <record id="timesheet_second_quarter_2018" model="timesheet.warning.quarter">
+        <field name="name">Second Quarter 2018</field>
+        <field name="start_date">2018-04-01</field>
+        <field name="end_date">2018-06-30</field>
+    </record>
+
+    <record id="timesheet_third_quarter_2018" model="timesheet.warning.quarter">
+        <field name="name">Third Quarter 2018</field>
+        <field name="start_date">2018-07-01</field>
+        <field name="end_date">2018-09-30</field>
+    </record>
+
+    <record id="timesheet_fourth_quarter_2018" model="timesheet.warning.quarter">
+        <field name="name">Fourth Quarter 2018</field>
+        <field name="start_date">2018-10-01</field>
+        <field name="end_date">2018-12-31</field>
+    </record>
+</odoo>

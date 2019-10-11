@@ -1,0 +1,113 @@
+<odoo>
+    <record id="template_warning_timesheet" model="mail.template">
+        <field name="name">Timesheet Warning Message</field>
+        <field name="email_from"/>
+        <field name="subject"/>
+        <field name="email_cc"/>
+        <field name="model_id" ref="pci_hr_timesheet_warning.model_timesheet_warning"/>
+        <field name="auto_delete" eval="False"/>
+        <field name="lang"/>
+        <field name="copyvalue"/>
+        <field name="body_html"><![CDATA[]]></field>
+    </record>
+
+    <record id="timesheet_first_warning_template" model="timesheet.mail">
+        <field name="name">Timesheet First Warning</field>
+        <field name="type">warning</field>
+        <field name="sequence">1</field>
+        <field name="email_template">
+            <![CDATA[
+<p>Hi %s,</p>
+<p>This email to inform you that you get your <b>%s</b> for not properly filled your daily timesheet.</p>
+<p>please complate your timesheet as you logged less than your total attendance time of yesterday</p>
+<br/>
+<p>Regards</p>
+<p><b>PCI Team</b></p>
+<p><b>IT solutions for International Trade, Manufacturing and e-Commerce</b></p>
+<img src="https://ci6.googleusercontent.com/proxy/j8WvUkBeuki9PLXCzSOC6hpvFBPVlpLATCXuqic8W41juBBLLVx2TsQ6qyLsjG7uLX1SxHoEmglLybXj-bVsjEXCuPECHRmf14ikM8rFNsklbhnwrc-8f-_p29K5Ugg5bzlHqKCoROx-guzR2-jnYJOU9IrD3gbWXtx0Z-CUI9feuwbIHWP9LeZAWNfaTm9l2rQ3Y3NNvHncxwY=s0-d-e1-ft#https://docs.google.com/uc?export=download&amp;id=0B-MxaoXZkIwka19RdzVwX255Ylk&amp;revid=0B-MxaoXZkIwkUWFQZmFqNTM5SE5mZTl2aWJPNjRBTVdPdFRRPQ" width="200" height="70">
+<div><i>Your trusted partner in Asia</i></div>
+<a href="http://www.portcities.net/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.portcities.net/" style="color: rgb(17, 85, 204);">www.portcities.net</a>
+               ]]>
+        </field>
+    </record>
+
+    <record id="timesheet_second_warning_template" model="timesheet.mail">
+        <field name="name">Timesheet Second Warning</field>
+        <field name="type">warning</field>
+        <field name="sequence">2</field>
+        <field name="email_template">
+            <![CDATA[
+<p>Hi %s,</p> 
+<p>This email to inform you that you get your <b>%s</b> for not properly filled your daily timesheet.</p>
+<p>please complate your timesheet as you logged less than your total attendance time of yesterday</p>
+<br/>
+<p>Regards</p>
+<p><b>PCI Team</b></p>
+<p><b>IT solutions for International Trade, Manufacturing and e-Commerce</b></p>
+<img src="https://ci6.googleusercontent.com/proxy/j8WvUkBeuki9PLXCzSOC6hpvFBPVlpLATCXuqic8W41juBBLLVx2TsQ6qyLsjG7uLX1SxHoEmglLybXj-bVsjEXCuPECHRmf14ikM8rFNsklbhnwrc-8f-_p29K5Ugg5bzlHqKCoROx-guzR2-jnYJOU9IrD3gbWXtx0Z-CUI9feuwbIHWP9LeZAWNfaTm9l2rQ3Y3NNvHncxwY=s0-d-e1-ft#https://docs.google.com/uc?export=download&amp;id=0B-MxaoXZkIwka19RdzVwX255Ylk&amp;revid=0B-MxaoXZkIwkUWFQZmFqNTM5SE5mZTl2aWJPNjRBTVdPdFRRPQ" width="200" height="70">
+<div><i>Your trusted partner in Asia</i></div>
+<a href="http://www.portcities.net/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.portcities.net/" style="color: rgb(17, 85, 204);">www.portcities.net</a>
+               ]]>
+        </field>
+    </record>
+
+    <record id="timesheet_third_warning_template" model="timesheet.mail">
+        <field name="name">Timesheet Third Warning</field>
+        <field name="type">warning</field>
+        <field name="sequence">3</field>
+        <field name="email_template">
+            <![CDATA[
+<p>Hi %s,</p> 
+<p>This email to inform you that you get your <b>%s</b> for not properly filled your daily timesheet.</p>
+<p>please complate your timesheet as you logged less than your total attendance time of yesterday</p>
+<br/>
+<p>Regards</p>
+<p><b>PCI Team</b></p>
+<p><b>IT solutions for International Trade, Manufacturing and e-Commerce</b></p>
+<img src="https://ci6.googleusercontent.com/proxy/j8WvUkBeuki9PLXCzSOC6hpvFBPVlpLATCXuqic8W41juBBLLVx2TsQ6qyLsjG7uLX1SxHoEmglLybXj-bVsjEXCuPECHRmf14ikM8rFNsklbhnwrc-8f-_p29K5Ugg5bzlHqKCoROx-guzR2-jnYJOU9IrD3gbWXtx0Z-CUI9feuwbIHWP9LeZAWNfaTm9l2rQ3Y3NNvHncxwY=s0-d-e1-ft#https://docs.google.com/uc?export=download&amp;id=0B-MxaoXZkIwka19RdzVwX255Ylk&amp;revid=0B-MxaoXZkIwkUWFQZmFqNTM5SE5mZTl2aWJPNjRBTVdPdFRRPQ" width="200" height="70">
+<div><i>Your trusted partner in Asia</i></div>
+<a href="http://www.portcities.net/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.portcities.net/" style="color: rgb(17, 85, 204);">www.portcities.net</a>
+               ]]>
+        </field>
+    </record>
+
+    <record id="timesheet_fourth_warning_template" model="timesheet.mail">
+        <field name="name">Timesheet Fourth Warning</field>
+        <field name="type">warning</field>
+        <field name="sequence">4</field>
+        <field name="email_template">
+            <![CDATA[
+<p>Hi %s,</p> 
+<p>This email to inform you that you get your <b>%s</b> for not properly filled your daily timesheet.</p>
+<p>please complate your timesheet as you logged less than your total attendance time of yesterday</p>
+<br/>
+<p>Regards</p>
+<p><b>PCI Team</b></p>
+<p><b>IT solutions for International Trade, Manufacturing and e-Commerce</b></p>
+<img src="https://ci6.googleusercontent.com/proxy/j8WvUkBeuki9PLXCzSOC6hpvFBPVlpLATCXuqic8W41juBBLLVx2TsQ6qyLsjG7uLX1SxHoEmglLybXj-bVsjEXCuPECHRmf14ikM8rFNsklbhnwrc-8f-_p29K5Ugg5bzlHqKCoROx-guzR2-jnYJOU9IrD3gbWXtx0Z-CUI9feuwbIHWP9LeZAWNfaTm9l2rQ3Y3NNvHncxwY=s0-d-e1-ft#https://docs.google.com/uc?export=download&amp;id=0B-MxaoXZkIwka19RdzVwX255Ylk&amp;revid=0B-MxaoXZkIwkUWFQZmFqNTM5SE5mZTl2aWJPNjRBTVdPdFRRPQ" width="200" height="70">
+<div><i>Your trusted partner in Asia</i></div>
+<a href="http://www.portcities.net/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.portcities.net/" style="color: rgb(17, 85, 204);">www.portcities.net</a>
+               ]]>
+        </field>
+    </record>
+
+    <record id="timesheet_fifth_warning_template" model="timesheet.mail">
+        <field name="name">Timesheet Fifth Warning</field>
+        <field name="type">warning</field>
+        <field name="sequence">5</field>
+        <field name="email_template">
+            <![CDATA[
+<p>Hi %s,</p> 
+<p>This email to inform you that you get your <b>%s</b> for not properly filled your daily timesheet.</p>
+<p>please complate your timesheet as you logged less than your total attendance time of yesterday</p>
+<br/>
+<p>Regards</p>
+<p><b>PCI Team</b></p>
+<p><b>IT solutions for International Trade, Manufacturing and e-Commerce</b></p>
+<img src="https://ci6.googleusercontent.com/proxy/j8WvUkBeuki9PLXCzSOC6hpvFBPVlpLATCXuqic8W41juBBLLVx2TsQ6qyLsjG7uLX1SxHoEmglLybXj-bVsjEXCuPECHRmf14ikM8rFNsklbhnwrc-8f-_p29K5Ugg5bzlHqKCoROx-guzR2-jnYJOU9IrD3gbWXtx0Z-CUI9feuwbIHWP9LeZAWNfaTm9l2rQ3Y3NNvHncxwY=s0-d-e1-ft#https://docs.google.com/uc?export=download&amp;id=0B-MxaoXZkIwka19RdzVwX255Ylk&amp;revid=0B-MxaoXZkIwkUWFQZmFqNTM5SE5mZTl2aWJPNjRBTVdPdFRRPQ" width="200" height="70">
+<div><i>Your trusted partner in Asia</i></div>
+<a href="http://www.portcities.net/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.portcities.net/" style="color: rgb(17, 85, 204);">www.portcities.net</a>
+               ]]>
+        </field>
+    </record>
+</odoo>
